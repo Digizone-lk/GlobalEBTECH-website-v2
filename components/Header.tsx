@@ -29,7 +29,7 @@ export function Header() {
 
   const handleNavClick = (path: string, hash?: string) => {
     setIsMenuOpen(false);
-    
+
     if (hash) {
       if (pathname === path) {
         // Already on the page, just scroll
@@ -49,9 +49,8 @@ export function Header() {
       initial={{ y: -100 }}
       animate={{ y: hidden ? -100 : 0 }}
       transition={{ duration: 0.3 }}
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white/95 backdrop-blur-lg shadow-lg' : 'bg-white shadow-sm'
-      }`}
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-lg shadow-lg' : 'bg-white shadow-sm'
+        }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
@@ -60,17 +59,22 @@ export function Header() {
               whileHover={{ scale: 1.05 }}
               className="flex items-center gap-2 cursor-pointer"
             >
-              <Image 
-                src="/global-ebtech-logo.svg" 
-                alt="Global EBTECH Logo" 
-                width={40} 
+              <Image
+                src="/global-ebtech-logo.svg"
+                alt="Global EBTECH Logo"
+                width={40}
                 height={40}
-                className="w-10 h-10"
+                className="w-12 h-12"
               />
-              
-              <span className="text-xl font-bold bg-gradient-to-r from-teal-800 to-cyan-700 bg-clip-text text-transparent">
-                GLOBAL EBTECH
-              </span>
+
+              <div className='flex flex-col'>
+                <span className="text-xl font-bold bg-gradient-to-r from-teal-800 to-cyan-700 bg-clip-text text-transparent">
+                  GLOBAL EBTECH
+                </span>
+                <span className='text-xs bg-gradient-to-r from-teal-800 to-cyan-700 bg-clip-text text-transparent text-center font-medium'>
+                  Your Goals. Our Directions.
+                </span>
+              </div>
             </motion.div>
           </Link>
 
@@ -103,14 +107,12 @@ export function Header() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               onClick={() => handleNavClick('/contact')}
-              className={`transition-colors relative group ${
-                pathname === '/contact' ? 'text-teal-800' : 'text-gray-700 hover:text-teal-800'
-              }`}
+              className={`transition-colors relative group ${pathname === '/contact' ? 'text-teal-800' : 'text-gray-700 hover:text-teal-800'
+                }`}
             >
               Contact
-              <span className={`absolute -bottom-1 left-0 h-0.5 bg-teal-800 transition-all ${
-                pathname === '/contact' ? 'w-full' : 'w-0 group-hover:w-full'
-              }`}></span>
+              <span className={`absolute -bottom-1 left-0 h-0.5 bg-teal-800 transition-all ${pathname === '/contact' ? 'w-full' : 'w-0 group-hover:w-full'
+                }`}></span>
             </motion.button>
             <motion.button
               whileHover={{ scale: 1.05 }}

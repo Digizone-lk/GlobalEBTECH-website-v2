@@ -26,17 +26,22 @@ export default function Footer() {
               className="flex items-center gap-2 cursor-pointer"
               onClick={() => handleNavigation('/')}
             >
-              <Image 
-                src="/global-ebtech-logo.svg" 
-                alt="Global EBTECH Logo" 
-                width={40} 
+              <Image
+                src="/global-ebtech-logo.svg"
+                alt="Global EBTECH Logo"
+                width={40}
                 height={40}
                 className="w-10 h-10"
-                />
-                            
-              <span className="text-xl font-bold bg-gradient-to-r from-teal-50 to-cyan-50 bg-clip-text text-transparent">
-                GLOBAL EBTECH
-              </span>
+              />
+
+              <div className='flex flex-col'>
+                <span className="text-xl font-bold bg-gradient-to-r from-teal-50 to-cyan-50 bg-clip-text text-transparent">
+                  GLOBAL EBTECH
+                </span>
+                <span className='text-xs bg-gradient-to-r from-teal-50 to-cyan-50 bg-clip-text text-transparent text-center font-medium'>
+                  Your Goals. Our Directions.
+                </span>
+              </div>
             </motion.div>
 
             <p className="text-gray-400 text-sm">
@@ -115,9 +120,9 @@ export default function Footer() {
           <p>&copy; 2026 Global EB Tech. All rights reserved.</p>
           <p className="mt-2">
             Powered by:{' '}
-            <a 
-              href="https://digizone.lk" 
-              target="_blank" 
+            <a
+              href="https://digizone.lk"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-teal-400 hover:text-teal-300 transition-colors"
             >
