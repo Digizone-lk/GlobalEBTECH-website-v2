@@ -43,7 +43,7 @@ const offices = [
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen pt-16">
+    <main className="min-h-screen pt-16 overflow-hidden">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-teal-800 via-cyan-700 to-teal-800 py-20 lg:py-32 overflow-hidden">
         <motion.div
