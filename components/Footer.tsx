@@ -1,8 +1,7 @@
 'use client';
 
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { Phone, Mail, Linkedin, Twitter, Facebook, Clock, MapPin, Instagram } from 'lucide-react';
+import { Phone, Mail, Facebook, Clock, MapPin, Instagram } from 'lucide-react';
 import { motion } from 'motion/react';
 import Image from 'next/image';
 

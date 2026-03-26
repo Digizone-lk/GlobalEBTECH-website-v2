@@ -1,6 +1,6 @@
 'use client';
 
-import { Mail, Phone, MapPin, Clock, MessageSquare, Headphones, Globe, Facebook, Instagram, } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, MessageSquare, Globe, Facebook, Instagram } from 'lucide-react';
 import { motion } from 'motion/react';
 import { ContactForm } from './ContactForm';
 
@@ -61,7 +61,7 @@ export default function ContactPage() {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="text-center text-white space-y-6">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }} className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm">
               <Globe className="w-4 h-4" />
-              We're Here to Help
+              We&apos;re Here to Help
             </motion.div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl leading-tight">Get In Touch With Us</h1>
             <p className="text-lg text-teal-100 max-w-2xl mx-auto">
@@ -131,7 +131,7 @@ export default function ContactPage() {
                   </div>
                 </div>
                 <p className="text-sm text-teal-100 mt-6 italic">
-                  We're always here to help! Our team works around the clock to support your business.
+                  We&apos;re always here to help! Our team works around the clock to support your business.
                 </p>
               </div>
 
@@ -333,7 +333,7 @@ export default function ContactPage() {
           >
             <h2 className="text-3xl sm:text-4xl mb-4">Ready to Get Started?</h2>
             <p className="text-xl text-teal-100 mb-8">
-              Let's discuss how our call center solutions can help your business grow
+              Let&apos;s discuss how our call center solutions can help your business grow
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.a

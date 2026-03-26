@@ -90,7 +90,7 @@ export function Contact() {
                 </div>
               </div>
               <p className="text-sm text-teal-100 mt-4">
-                We're always here to help!
+                We&apos;re always here to help!
               </p>
             </motion.div>
           </motion.div>
