@@ -13,7 +13,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative w-full aspect-[16/10]"
+          className="relative w-full aspect-[16/11]"
         >
           <Image
             src="/hero.jpg"
@@ -26,7 +26,7 @@ export default function Hero() {
 
         {/* Overlay Content */}
         <div className="absolute inset-0 flex items-center rounded-3xl">
-          <div className="w-full sm:w-4/5 md:w-3/5 lg:w-1/2 px-6 sm:px-8 md:px-12 lg:px-16">
+          <div className="w-3/4 sm:w-4/5 md:w-3/5 lg:w-1/2 px-6 sm:px-8 md:px-12 lg:px-16">
             <div className="space-y-3 sm:space-y-4 md:space-y-6">
 
               <motion.div
