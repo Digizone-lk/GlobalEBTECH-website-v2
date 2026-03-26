@@ -3,7 +3,12 @@
 import { Send } from 'lucide-react';
 import { useState } from 'react';
 import { motion } from 'motion/react';
-// import emailjs from '@emailjs/browser';
+import emailjs from '@emailjs/browser';
+
+const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '';
+const TEMPLATE_NOTIFY = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_NOTIFY || '';
+const TEMPLATE_AUTOREPLY = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_AUTOREPLY || '';
+const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || '';
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
@@ -23,38 +28,27 @@ export function ContactForm() {
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      phone: formData.phone || 'Not provided',
+      company: formData.company || 'Not provided',
+      service: formData.service || 'Not specified',
+      message: formData.message,
+    };
+
     try {
-      // EmailJS Configuration
-      // Uncomment and configure these values in your environment variables
-      // const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '';
-      // const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '';
-      // const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || '';
+      // Send notification email to info@globalebtech.com
+      await emailjs.send(SERVICE_ID, TEMPLATE_NOTIFY, templateParams, PUBLIC_KEY);
 
-      // Send email using EmailJS
-      // await emailjs.send(
-      //   serviceId,
-      //   templateId,
-      //   {
-      //     from_name: formData.name,
-      //     from_email: formData.email,
-      //     phone: formData.phone,
-      //     company: formData.company,
-      //     service: formData.service,
-      //     message: formData.message,
-      //     to_name: 'Global EB Tech Team',
-      //   },
-      //   publicKey
-      // );
+      // Send auto-reply to the user
+      await emailjs.send(SERVICE_ID, TEMPLATE_AUTOREPLY, templateParams, PUBLIC_KEY);
 
-      // Temporary alert for demo (remove when EmailJS is configured)
-      alert('Thank you for your interest! We will contact you shortly.');
-      
       setSubmitStatus('success');
       setFormData({ name: '', email: '', phone: '', company: '', service: '', message: '' });
     } catch (error) {
       console.error('Email send error:', error);
       setSubmitStatus('error');
-      alert('Something went wrong. Please try again or contact us directly.');
     } finally {
       setIsSubmitting(false);
     }
@@ -161,10 +155,14 @@ export function ContactForm() {
       </motion.button>
 
       {submitStatus === 'success' && (
-        <p className="text-green-600 text-sm text-center">Message sent successfully!</p>
+        <p className="text-green-600 text-sm text-center">
+          Message sent! Check your inbox — we&apos;ve sent you a confirmation. Our team will contact you ASAP.
+        </p>
       )}
       {submitStatus === 'error' && (
-        <p className="text-red-600 text-sm text-center">Failed to send message. Please try again.</p>
+        <p className="text-red-600 text-sm text-center">
+          Failed to send message. Please try again or email us at info@globalebtech.com
+        </p>
       )}
     </form>
   );
