@@ -64,14 +64,14 @@ export function Header() {
                 alt="Global EBTECH Logo"
                 width={40}
                 height={40}
-                className="w-12 h-12"
+                className="w-8 md:w-12 h-8 md:h-12"
               />
 
               <div className='flex flex-col'>
-                <span className="text-xl font-bold bg-gradient-to-r from-teal-800 to-cyan-700 bg-clip-text text-transparent">
+                <span className="text-sm sm:text-base md:text-lg lg:text-xl font-bold bg-gradient-to-r from-teal-800 to-cyan-700 bg-clip-text text-transparent">
                   GLOBAL EBTECH
                 </span>
-                <span className='text-xs bg-gradient-to-r from-teal-800 to-cyan-700 bg-clip-text text-transparent text-center font-medium'>
+                <span className='text-xs md:text-base bg-gradient-to-r from-teal-800 to-cyan-700 bg-clip-text text-transparent text-center font-medium'>
                   Your Goals. Our Directions.
                 </span>
               </div>
